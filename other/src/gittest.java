@@ -32,6 +32,8 @@ public class gittest {
         System.out.println("meaningless");
         //test
         System.out.println("meaningless");
+        System.out.println("meaningless");
+        System.out.println("pull test");
 
     }
 }
