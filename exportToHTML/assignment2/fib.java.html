@@ -1,0 +1,40 @@
+<html>
+<head>
+<title>fib.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #ed864a;}
+.s1 { color: #ebebeb;}
+.s2 { color: #ed864a; font-weight: bold;}
+.s3 { color: #54b33e;}
+.s4 { color: #33ccff; font-weight: bold;}
+.s5 { color: #7ec3e6;}
+</style>
+</head>
+<body bgcolor="#131314">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+fib.java</font>
+</center></td></tr></table>
+<pre><span class="s0">package </span><span class="s1">assignment2</span><span class="s2">;</span>
+
+<span class="s0">public class </span><span class="s1">fib  {</span>
+    <span class="s0">public static void </span><span class="s1">main(String[] args) {</span>
+        <span class="s1">System.out.println(</span><span class="s3">&quot;the value of fib(10) is &quot;</span><span class="s1">+fib(</span><span class="s4">10</span><span class="s1">))</span><span class="s2">;  </span><span class="s5">// Output: 55</span>
+    <span class="s1">}</span>
+
+    <span class="s0">static int </span><span class="s1">fib(</span><span class="s0">int </span><span class="s1">n) {</span>
+        <span class="s0">if </span><span class="s1">(n == </span><span class="s4">0</span><span class="s1">) {</span>
+            <span class="s0">return </span><span class="s4">0</span><span class="s2">;</span>
+        <span class="s1">} </span><span class="s0">else if </span><span class="s1">(n == </span><span class="s4">1</span><span class="s1">) {</span>
+            <span class="s0">return </span><span class="s4">1</span><span class="s2">;</span>
+        <span class="s1">} </span><span class="s0">else </span><span class="s1">{</span>
+            <span class="s0">return </span><span class="s1">fib(n - </span><span class="s4">1</span><span class="s1">) + fib(n - </span><span class="s4">2</span><span class="s1">)</span><span class="s2">;</span>
+        <span class="s1">}</span>
+    <span class="s1">}</span>
+<span class="s1">}</span>
+
+</pre>
+</body>
+</html>

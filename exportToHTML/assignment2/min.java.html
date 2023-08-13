@@ -1,0 +1,66 @@
+<html>
+<head>
+<title>min.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #ed864a;}
+.s1 { color: #ebebeb;}
+.s2 { color: #ed864a; font-weight: bold;}
+.s3 { color: #7ec3e6;}
+.s4 { color: #33ccff; font-weight: bold;}
+.s5 { color: #54b33e;}
+</style>
+</head>
+<body bgcolor="#131314">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+min.java</font>
+</center></td></tr></table>
+<pre><span class="s0">package </span><span class="s1">assignment2</span><span class="s2">;</span>
+<span class="s0">public class </span><span class="s1">min</span>
+<span class="s1">{</span>
+    <span class="s3">// Returns the minimum number of coins</span>
+    <span class="s3">// to make V cents. If not possible returns -1</span>
+   <span class="s0">public static int </span><span class="s1">minCoins(</span><span class="s0">int </span><span class="s1">coins[]</span><span class="s2">, </span><span class="s0">int </span><span class="s1">m</span><span class="s2">, </span><span class="s0">int </span><span class="s1">V)</span>
+    <span class="s1">{</span>
+        <span class="s3">// base case</span>
+        <span class="s0">if </span><span class="s1">(V == </span><span class="s4">0</span><span class="s1">) </span><span class="s0">return </span><span class="s4">0</span><span class="s2">;</span>
+
+        <span class="s3">// Initialize result</span>
+        <span class="s0">int </span><span class="s1">res = Integer.MAX_VALUE</span><span class="s2">;</span>
+
+        <span class="s3">// Try every coin that has smaller value than V</span>
+        <span class="s0">for </span><span class="s1">(</span><span class="s0">int </span><span class="s1">i=</span><span class="s4">0</span><span class="s2">; </span><span class="s1">i&lt;m</span><span class="s2">; </span><span class="s1">i++)</span>
+        <span class="s1">{</span>
+            <span class="s0">if </span><span class="s1">(coins[i] &lt;= V)</span>
+            <span class="s1">{</span>
+                <span class="s0">int </span><span class="s1">sub_res = minCoins(coins</span><span class="s2">, </span><span class="s1">m</span><span class="s2">, </span><span class="s1">V-coins[i])</span><span class="s2">;</span>
+                <span class="s3">/*System.out.println(sub_res); 
+                System.out.println(&quot;--&quot;); 
+                System.out.println(res);*/</span>
+               <span class="s3">// System.out.println(sub_res);</span>
+                <span class="s3">// Check for INT_MAX to avoid overflow and see if</span>
+                <span class="s3">// result can be minimized</span>
+                <span class="s0">if </span><span class="s1">(sub_res != Integer.MAX_VALUE</span>
+                        <span class="s1">&amp;&amp; sub_res + </span><span class="s4">1 </span><span class="s1">&lt; res)</span>
+                    <span class="s1">res = sub_res + </span><span class="s4">1</span><span class="s2">;</span>
+               <span class="s3">// System.out.println(&quot;---&quot;);</span>
+            <span class="s1">}</span>
+
+        <span class="s1">}</span>
+        <span class="s0">return </span><span class="s1">(res==Integer.MAX_VALUE)? -</span><span class="s4">1 </span><span class="s1">: res</span><span class="s2">;</span>
+    <span class="s1">}</span>
+
+    <span class="s0">public static void </span><span class="s1">main(String args[])</span>
+    <span class="s1">{</span>
+        <span class="s0">int </span><span class="s1">coins[] = {</span><span class="s4">25</span><span class="s2">, </span><span class="s4">10</span><span class="s2">, </span><span class="s4">5</span><span class="s1">}</span><span class="s2">;</span>
+        <span class="s0">int </span><span class="s1">m = coins.length</span><span class="s2">;</span>
+        <span class="s0">int </span><span class="s1">V = </span><span class="s4">30</span><span class="s2">;</span>
+        <span class="s1">System.out.println(</span><span class="s5">&quot;value of coins are 25 10 5&quot;</span><span class="s1">)</span><span class="s2">;</span>
+        <span class="s1">System.out.println(</span><span class="s5">&quot;Minimum coins required is &quot;</span><span class="s1">+ minCoins(coins</span><span class="s2">, </span><span class="s1">m</span><span class="s2">, </span><span class="s1">V))</span><span class="s2">;</span>
+    <span class="s1">}</span>
+<span class="s1">}</span>
+</pre>
+</body>
+</html>
